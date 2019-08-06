@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "node"
+script:
+  -
+install:
+  - npm install
+  - npm run build
+deploy:
+  skip_cleanup: true
+  provider: firebase
+  token:
+    secure: "$FIREBASE_TOKEN"
+  project: "toolset-one-todolist"

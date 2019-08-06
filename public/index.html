@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge; chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+	 <meta name="description" content="Write texts in a distraction-free app. They sync across all you devices. It's free.">
+
+	<meta name="application-name" content="Todolist Toolset.One">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="Todolist Toolset.One">
+
+	<link rel="apple-touch-icon" href="/icons/icon-512x512.png">
+	<link rel="apple-touch-startup-image" href="/icons/icon-512x512.png">
+	<link rel="icon" type="image/png" sizes="512x512" href="/icons/icon-512x512.png">
+
+	<meta name="theme-color" content="#FAF9F7">
+
+	<link rel="manifest" href="/manifest.json" />
+
+	<title>
+		Todolist – Toolset One
+	</title>
+
+	<link rel='stylesheet' href='/global.css'>
+	<link rel='stylesheet' href='/bundle.css'>
+</head>
+
+<body>
+
+
+	<script src="/firebase-app.js"></script>
+	<script src="/firebase-auth.js"></script>
+	<script src="/firebase-firestore.js"></script>
+
+	<script>
+		if (!navigator.serviceWorker.controller) {
+			navigator.serviceWorker.register('/service-worker.js', {
+				scope: '/'
+			})
+		}
+
+	const initFirebase = () => {
+		firebase.initializeApp({
+			apiKey: "AIzaSyBLj_MBB_3Ffa-1iFasShCEIgnWeQJvw3Y",
+			authDomain: "toolset-one-todolist.firebaseapp.com",
+			databaseURL: "https://toolset-one-todolist.firebaseio.com",
+			projectId: "toolset-one-todolist",
+			storageBucket: "toolset-one-todolist.appspot.com",
+			messagingSenderId: "782297475806",
+			appId: "1:782297475806:web:14f63703691a5204"
+		})
+
+		firebase.db = firebase.firestore()
+
+		firebase.db.settings({ 
+			timestampsInSnapshots: true
+		})
+
+		firebase.db.enablePersistence({
+			experimentalTabSynchronization: true
+		})
+	}
+
+	initFirebase()
+	</script>
+	
+	<script src='/bundle.js'></script>
+
+	<noscript>
+		<p>
+			Please enable javascript to use this app
+		</p>
+	</noscript>
+</body>
+</html>

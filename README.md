@@ -1,2 +1,2 @@
-# todolist
-A simple todolist.
+# Todolist
+A tiny todolist app.

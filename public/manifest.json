@@ -1,0 +1,18 @@
+{
+  "name": "Todolist – Toolset.One",
+  "short_name": "Todolist – Toolset.One",
+  "theme_color": "#FAF9F7",
+  "background_color": "#FAF9F7",
+  "display": "standalone",
+  "orientation": "portrait",
+  "Scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "splash_pages": null
+}
